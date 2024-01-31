@@ -68,7 +68,7 @@
 
     <h1>Gæt et tilfældigt tal mellem 0 og 100</h1>
 
-    <input type="number" id="guess" placeholder="Gæt et tal">
+    <input type="number" id="guess" max="100" placeholder="Gæt et tal">
     <button onclick="checkGuess()">Gæt!</button>
 
     <div id="result"></div>
@@ -83,16 +83,16 @@
 
         function checkGuess() {
             // Hent brugerens gæt
-            const userGuess = parseInt(document.getElementById('guess').value);
+            const userGuess = parseInt(document.querySelector('#guess').value);
 
             // Tjek om gættet er korrekt
             if (userGuess === randomNumber) {
-                document.getElementById('result').innerHTML = 'Tillykke! Du har gættet rigtigt!';
-                document.getElementById('celebration').style.display = 'block';
+                document.querySelector('#result').innerHTML = 'Tillykke! Du har gættet rigtigt!';
+                document.querySelector('#celebration').style.display = 'block';
             } else if (userGuess < randomNumber) {
-                document.getElementById('result').innerHTML = 'Forkert! Tallet er for lavt.';
+                document.querySelector('#result').innerHTML = 'Forkert! Tallet er for lavt.';
             } else {
-                document.getElementById('result').innerHTML = 'Forkert! Tallet er for højt.';
+                document.querySelector('#result').innerHTML = 'Forkert! Tallet er for højt.';
             }
         }
     </script>
