@@ -34,15 +34,15 @@ h1 {
   background-image: url(hand_rock.png);
 }
 
-.player.rock {
+.rock {
   background-image: url(hand_rock.png);
 }
 
-.player.paper {
+.paper {
   background-image: url(hand_paper.png);
 }
 
-.player.scissors {
+.scissors {
   background-image: url(hand_scissors.png);
 }
 
@@ -93,8 +93,8 @@ h1 {
 }
 
 #texts h1 {
-  color: #ffde53;
-  text-shadow: 4px 4px 1px red, -4px -4px 1px red, 4px -4px 1px red, -4px 4px 1px red;
+  color: #eee;
+  text-shadow: 4px 4px 1px #444059, -4px -4px 1px #444059, 4px -4px 1px #444059, -4px 4px 1px #444059;
 }
 
 .hidden {
