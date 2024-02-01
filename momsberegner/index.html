@@ -11,11 +11,12 @@
 <body>
 
     <script>
+        // Funktionen momsBeregner tager to argumenter: beloeb og moms (med en standardværdi på 25)
         function momsBeregner(beloeb, moms = 25) {
             // Beregn beløbet med momsen
             const beloebMedMoms = beloeb + (beloeb * moms / 100);
 
-            // Udskriv resultatet
+            // Udskriv resultatet til konsollen
             console.log(`Beløb med moms (${moms}%): ${beloebMedMoms.toFixed(2)}`);
         }
     </script>
