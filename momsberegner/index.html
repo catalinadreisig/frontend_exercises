@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momsberegner</title>
+</head>
+
+<body>
+
+    <script>
+        // Funktionen momsBeregner tager to argumenter: beloeb og moms (med en standardværdi på 25)
+        function momsBeregner(beloeb, moms = 25) {
+            // Beregn beløbet med momsen
+            const beloebMedMoms = beloeb + (beloeb * moms / 100);
+
+            // Udskriv resultatet til konsollen
+            console.log(`Beløb med moms (${moms}%): ${beloebMedMoms.toFixed(2)}`);
+        }
+    </script>
+</body>
+
+</html>
