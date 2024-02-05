@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: pink;
+            color: blue;
+            text-transform: uppercase;
+            font-size: 2cqw;
+        }
+
+        h1 {
+            color: blue;
+            text-transform: uppercase;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+
+
+        @keyframes celebrate {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+
+        input {
+            border: 0;
+            background-color: blue;
+            font-size: 3cqw;
+            color: pink;
+
+        }
+
+        button {
+            border: 0;
+            font-size: 3cqw;
+            background-color: blue;
+            color: pink;
+            margin-left: 2%;
+
+        }
+    </style>
+    <title>Gæt et tilfældigt tal</title>
+</head>
+
+<body>
+
+    <h1>Jeg tænker på et tal mellem 1 og 100</h1>
+
+    <button onclick="computerGætter()">Start</button>
+    <button onclick="forHojt()">For højt</button>
+    <button onclick="forLavt()">For lavt</button>
+    <button onclick="rigtigtGaet()">Rigtigt Gættet!</button>
+
+    <div id="result"></div>
+
+    <script>
+        let min = 1;
+        let max = 100;
+        let computerensGæt;
+
+        function computerGætter() {
+
+            computerensGæt = Math.floor((min + max) / 2);
+
+            document.querySelector('#result').innerHTML = 'Jeg gætter på: ' + computerensGæt;
+        }
+
+        function forHojt() {
+            max = computerensGæt - 1;
+            computerGætter();
+        }
+
+        function forLavt() {
+            min = computerensGæt + 1;
+            computerGætter();
+        }
+
+        function rigtigtGaet() {
+            document.querySelector('#result').innerHTML = 'Tak for legen!';
+        }
+    </script>
+
+</body>
+
+</html>
