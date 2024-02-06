@@ -54,8 +54,46 @@ const vehicles = [
 ];
 
 const ulPointer = document.querySelector("ul");
+/* 
+ELECTRIC
+function isElectric(vehicle) {
+  if (vehicle.isElectric === true) {
+    return vehicle;
+  }
+}
+const allElectricVehicles = vehicles.filter(isElectric);
 
-showTheseVehicles(vehicles);
+PASSENGERS
+function passengers(vehicle) {
+  if (vehicle.passengers > 1) {
+    return true;
+  }
+  return false;
+}
+
+const passengersVehicles = vehicles.filter(passengers);
+
+JONAS
+function ownedBy(vehicle) {
+  if (vehicle.ownedBy === "Jonas" || vehicle.ownedBy === "Vingegård") {
+    return true;
+  }
+  return false;
+}
+const jonasVehicles = vehicles.filter(ownedBy);
+
+RUGBRØD
+function rugbrod(vehicle) {
+  if (vehicle.fuel === "Rugbrød" && vehicle.passengers > 1) {
+    return true;
+  }
+  return false;
+}
+
+const rugbrodVehicles = vehicles.filter(rugbrod);
+*/
+
+showTheseVehicles(rugbrodVehicles);
 
 function showTheseVehicles(arr) {
   arr.forEach((each) => {
@@ -68,10 +106,3 @@ function showTheseVehicles(arr) {
     ulPointer.innerHTML += `<li>${each.isTandem}</li>`;
   });
 }
-
-function isElectric(vehicle) {
-  return vehicle.isElectric === true;
-}
-
-let onlyElectrics = vehicles.filter(isElectric);
-console.log("electrics", onlyElectrics);
