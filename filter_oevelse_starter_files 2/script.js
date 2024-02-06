@@ -1,3 +1,4 @@
+/*
 const vehicles = [
   { type: "Bus", fuel: "Diesel", passengers: 45, stops: ["Nørrebrogade", "Elmegade"] },
   { type: "Bil", fuel: "Benzin", passengers: 4, ownedBy: "Klaus" },
@@ -31,3 +32,32 @@ function all(isElectric) {
   return true;
   const 
 }
+*/
+const animals = [
+  {
+    name: "Mandu",
+    type: "cat",
+  },
+  {
+    name: "Mia",
+    type: "cat",
+  },
+  {
+    name: "Leeloo",
+    type: "dog",
+  },
+  {
+    name: "ScoobyDoo",
+    type: "dog",
+  },
+];
+
+function isCat(animal) {
+  if (animal.type === "cat") {
+    return true;
+  } else {
+    return false;
+  }
+}
+let result = animals.filter(isCat);
+console.log(result);
