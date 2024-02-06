@@ -55,64 +55,54 @@ const vehicles = [
 ];
 
 const ulPointer = document.querySelector("ul");
-/* 
-ELECTRIC
-function isElectric(vehicle) {
-  if (vehicle.isElectric === true) {
-    return vehicle;
-  }
-}
-const allElectricVehicles = vehicles.filter(isElectric);
-
-PASSENGERS
-function passengers(vehicle) {
-  if (vehicle.passengers > 1) {
-    return true;
-  }
-  return false;
-}
-
-const passengersVehicles = vehicles.filter(passengers);
-
-JONAS
-function ownedBy(vehicle) {
-  if (vehicle.ownedBy === "Jonas" || vehicle.ownedBy === "Vingegård") {
-    return true;
-  }
-  return false;
-}
-const jonasVehicles = vehicles.filter(ownedBy);
-
-RUGBRØD
-function rugbrod(vehicle) {
-  if (vehicle.fuel === "Rugbrød" && vehicle.passengers > 1) {
-    return true;
-  }
-  return false;
-}
-
-const rugbrodVehicles = vehicles.filter(rugbrod);
-
-showTheseVehicles(rugbrodVehicles);
-*/
 
 function showTheseVehicles(arr) {
+  ulPointer.innerHTML = ""; // Clear previous list items
   arr.forEach((each) => {
-    ulPointer.innerHTML += `<li>${each.type}</li>`;
-    ulPointer.innerHTML += `<li>${each.fuel}</li>`;
-    ulPointer.innerHTML += `<li>${each.passengers}</li>`;
-    ulPointer.innerHTML += `<li>${each.stops}</li>`;
-    ulPointer.innerHTML += `<li>${each.ownedBy}</li>`;
-    ulPointer.innerHTML += `<li>${each.isElectric}</li>`;
-    ulPointer.innerHTML += `<li>${each.isTandem}</li>`;
+    const li = document.createElement("li");
+    let stops = each.stops ? each.stops.join(", ") : ""; // Check if stops array exists
+
+    li.innerHTML = `
+      <p>Type: ${each.type}</p>
+      <p>Fuel: ${each.fuel}</p>
+      <p>Passengers: ${each.passengers}</p>
+      <p>Stops: ${stops}</p>
+      <p>Owned by: ${each.ownedBy || "Unknown"}</p>
+      <p>Electric: ${each.isElectric ? "Yes" : "No"}</p>
+      <p>Tandem: ${each.isTandem ? "Yes" : "No"}</p>
+    `;
+
+    ulPointer.appendChild(li);
   });
 }
 
 document.querySelectorAll("button").forEach((button) => {
-  console.log(button);
   button.addEventListener("click", btnFiltersEvtListener);
 });
 
-function btnFiltersEvtListener() {
-  console.log(evt.currentTarget.dataset.filter);
+function btnFiltersEvtListener(evt) {
+  const filterType = evt.currentTarget.dataset.filter;
+  let filteredVehicles = [];
+
+  switch (filterType) {
+    case "all":
+      filteredVehicles = vehicles;
+      break;
+    case "electric":
+      filteredVehicles = vehicles.filter((vehicle) => vehicle.isElectric);
+      break;
+    case "passengers":
+      filteredVehicles = vehicles.filter((vehicle) => vehicle.passengers > 1);
+      break;
+    case "jonas":
+      filteredVehicles = vehicles.filter((vehicle) => vehicle.ownedBy === "Jonas" || vehicle.ownedBy === "Vingegård");
+      break;
+    case "rugbrod":
+      filteredVehicles = vehicles.filter((vehicle) => vehicle.fuel === "Rugbrød" && vehicle.passengers > 1);
+      break;
+    default:
+      filteredVehicles = vehicles;
+  }
+
+  showTheseVehicles(filteredVehicles);
 }
