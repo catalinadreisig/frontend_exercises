@@ -1,5 +1,5 @@
 /*
-
+DYR FILTERS
 const animals = [
   {
     name: "Mandu",
@@ -40,6 +40,7 @@ let onlyDogs = animals.filter(isDog);
 console.log("Dogs", onlyDogs);
 */
 
+"use strict";
 const vehicles = [
   { type: "Bus", fuel: "Diesel", passengers: 45, stops: ["Nørrebrogade", "Elmegade"] },
   { type: "Bil", fuel: "Benzin", passengers: 4, ownedBy: "Klaus" },
@@ -91,9 +92,9 @@ function rugbrod(vehicle) {
 }
 
 const rugbrodVehicles = vehicles.filter(rugbrod);
-*/
 
 showTheseVehicles(rugbrodVehicles);
+*/
 
 function showTheseVehicles(arr) {
   arr.forEach((each) => {
@@ -105,4 +106,13 @@ function showTheseVehicles(arr) {
     ulPointer.innerHTML += `<li>${each.isElectric}</li>`;
     ulPointer.innerHTML += `<li>${each.isTandem}</li>`;
   });
+}
+
+document.querySelectorAll("button").forEach((button) => {
+  console.log(button);
+  button.addEventListener("click", btnFiltersEvtListener);
+});
+
+function btnFiltersEvtListener() {
+  console.log(evt.currentTarget.dataset.filter);
 }
