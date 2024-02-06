@@ -59,5 +59,15 @@ function isCat(animal) {
     return false;
   }
 }
-let result = animals.filter(isCat);
-console.log(result);
+
+function isDog(animal) {
+  if (animal.type === "dog") {
+    return true;
+  } else {
+    return false;
+  }
+}
+let onlyCats = animals.filter(isCat);
+console.log("Cats", onlyCats);
+let onlyDogs = animals.filter(isDog);
+console.log("Dogs", onlyDogs);
