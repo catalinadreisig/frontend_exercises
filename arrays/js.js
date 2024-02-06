@@ -4,7 +4,7 @@ console.log(letters[4]);
 let newarr = letters;
 newarr[4] = "*";
 console.log(letters[4]);
-*/
+
 
 let people = ["Harry", "Ron", "Hermione"];
 let result;
@@ -21,3 +21,11 @@ result = people.splice(result, 1);
 
 console.log(result);
 console.log(people);
+*/
+
+const people = ["Harry", "Ron", "Hermione", "Neville"];
+function testParms(a, b, c, d) {
+  console.log(`a:${a},b:${b}, c:${c}, c:${c}`);
+}
+
+people.forEach(testParms);

@@ -26,3 +26,8 @@ function showTheseVehicles(arr) {
     ulPointer.innerHTML += `<li>${each.isTandem}</li>`;
   });
 }
+
+function all(isElectric) {
+  return true;
+  const 
+}
