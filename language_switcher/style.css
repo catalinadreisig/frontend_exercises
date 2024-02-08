@@ -1,4 +1,16 @@
 body {
   background-color: azure;
   font-size: 5cqw;
+  text-align: center;
+}
+header {
+  color: palevioletred;
+}
+
+p {
+  color: palevioletred;
+}
+
+.footer {
+  color: palevioletred;
 }
