@@ -15,11 +15,10 @@ const texts = {
   },
 };
 
-const locale = "da"; // Initial language set to Danish
-
+// Funktion til at ændre sproget baseret på den valgte værdi i dropdown-menuen
 function changeLanguage(locale) {
   const languageTexts = texts[locale];
-  if (!languageTexts) return; // If language not found in texts object, do nothing
+  if (!languageTexts) return; // Hvis sproget ikke findes i tekstobjektet, skal der ikke gøres noget
 
   languageTexts.texts.forEach(({ text, location }) => {
     const element = document.querySelector(location);
@@ -29,11 +28,11 @@ function changeLanguage(locale) {
   });
 }
 
-// Initial language setup
-changeLanguage(locale);
+// Funktion til at opdatere sproget, når der vælges en ny værdi i dropdown-menuen
+document.getElementById("language-select").addEventListener("change", function () {
+  changeLanguage(this.value);
+});
 
-// Example: Changing language to German after 2 seconds
-setTimeout(() => {
-  const newLocale = "de";
-  changeLanguage(newLocale);
-}, 2000);
+// Initial sprogopsætning
+const initialLocale = "da";
+changeLanguage(initialLocale);
