@@ -2,6 +2,8 @@ body {
   background-color: azure;
   font-size: 5cqw;
   text-align: center;
+  text-transform: uppercase;
+  margin-top: 10%;
 }
 header {
   color: palevioletred;
