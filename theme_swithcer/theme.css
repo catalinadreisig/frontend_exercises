@@ -1,0 +1,20 @@
+[data-theme="pang"] {
+  --bg: #04e762;
+  --var2: #dc0073;
+  --var3: #89fc00;
+  --var4: #f5b700;
+}
+
+[data-theme="catalina"] {
+  --bg: #8400ff;
+  --var2: #fc97cb;
+  --var3: #fc7600;
+  --var4: #cbfff0;
+}
+
+[data-theme="esther"] {
+  --bg: #fd1999;
+  --var2: #ff0000;
+  --var3: #0000ff;
+  --var4: #00ffff;
+}
