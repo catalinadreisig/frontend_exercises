@@ -3,6 +3,7 @@
   --var2: #dc0073;
   --var3: #89fc00;
   --var4: #f5b700;
+  color: #ffffff;
 }
 
 [data-theme="catalina"] {
@@ -10,6 +11,7 @@
   --var2: #fc97cb;
   --var3: #fc7600;
   --var4: #cbfff0;
+  color: #ffffff;
 }
 
 [data-theme="esther"] {
@@ -17,4 +19,13 @@
   --var2: #ff0000;
   --var3: #0000ff;
   --var4: #00ffff;
+  color: #ffffff;
+}
+
+[data-theme="hej"] {
+  --bg: #3f5444;
+  --var2: #5a0e0e;
+  --var3: #000000;
+  --var4: #4c8080;
+  color: #ffffff;
 }
