@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Episode Button</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: red;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: left 3s;
+            /* Ændret transitionstiden til 3 sekunder */
+            z-index: 0;
+            animation: slide 3s linear infinite;
+            /* Tilføjet animation til at starte ved indlæsning */
+        }
+
+        @keyframes slide {
+            100% {
+                left: 100%;
+            }
+        }
+
+        button:hover::before {
+            left: 100%;
+            /* Sørger for at farven udfylder knappen ved hover */
+        }
+
+        button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="nextEpisodeBtn"><span>Next Episode</span></button>
+
+    <script>
+        const button = document.getElementById('nextEpisodeBtn');
+        const span = button.querySelector('span');
+
+        button.addEventListener('mouseenter', () => {
+            span.style.color = '#fff';
+            button.querySelector('before').style.left = '100%'; // Stopper animationen ved hover
+        });
+
+        button.addEventListener('mouseleave', () => {
+            span.style.color = '';
+        });
+    </script>
+
+</body>
+
+</html>
