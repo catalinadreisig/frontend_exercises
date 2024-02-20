@@ -32,17 +32,22 @@ function loadTasks() {
 
 function addTask() {
   const taskInput = document.getElementById("taskInput");
+  const quantityInput = document.getElementById("quantityInput");
   const description = taskInput.value.trim();
-  if (description) {
+  const quantity = parseInt(quantityInput.value.trim()) || 1;
+
+  if (description && quantity > 0) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const newTask = {
       id: Date.now(),
       description: description,
+      quantity: quantity,
       done: false,
     };
     tasks.push(newTask);
     localStorage.setItem("tasks", JSON.stringify(tasks));
     taskInput.value = "";
+    quantityInput.value = "";
     loadTasks();
   }
 }
