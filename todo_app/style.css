@@ -1,5 +1,33 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "IBM Plex Mono", monospace;
+  background-color: rgb(255, 226, 245);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+/****** Input, knap ********/
+#taskInput,
+#quantityInput {
+  font-family: "IBM Plex Mono", monospace;
+  width: 16%;
+  border-style: hidden;
+}
+
+button {
+  font-family: "IBM Plex Mono", monospace;
+  background-color: rgb(189, 255, 187);
+  border-style: hidden;
 }
 
 #todo-list,
@@ -18,4 +46,8 @@ body {
 
 .done-task {
   text-decoration: line-through;
+}
+
+.checkbox {
+  background-color: blue;
 }
