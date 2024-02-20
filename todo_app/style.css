@@ -24,14 +24,6 @@ h2 {
   border-style: hidden;
 }
 
-#quantityInput::-webkit-inner-spin-button,
-#quantityInput::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -webkit-appearance: none;
-  background-color: rgb(189, 255, 187);
-  color: white;
-}
-
 button {
   font-family: "IBM Plex Mono", monospace;
   background-color: rgb(189, 255, 187);
