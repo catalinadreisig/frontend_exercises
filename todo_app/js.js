@@ -39,7 +39,7 @@ function addTask() {
   if (description && quantity > 0) {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const newTask = {
-      id: Date.now(),
+      id: crypto.randomUUID(), // Ændret fra Date.now() til crypto.randomUUID()
       description: description,
       quantity: quantity,
       done: false,
